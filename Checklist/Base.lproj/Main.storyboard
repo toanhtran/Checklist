@@ -41,7 +41,13 @@
                             <outlet property="delegate" destination="UIZ-uV-eu5" id="tC9-Fd-Gmw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="N1x-FD-vX8"/>
+                    <navigationItem key="navigationItem" title="Checklists" id="N1x-FD-vX8">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="en5-gE-vfl">
+                            <connections>
+                                <action selector="addItem:" destination="UIZ-uV-eu5" id="cXk-gP-lia"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEo-AT-fWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

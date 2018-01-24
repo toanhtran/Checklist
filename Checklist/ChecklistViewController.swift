@@ -10,6 +10,9 @@ import UIKit
 
 class ChecklistViewController: UITableViewController {
 	
+	@IBAction func addItem(_ sender: UIBarButtonItem) {
+		print("added item")
+	}
 	var items: [ChecklistItem]
 	
 	required init?(coder aDecoder: NSCoder) {
