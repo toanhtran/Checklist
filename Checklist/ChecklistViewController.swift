@@ -10,10 +10,25 @@ import UIKit
 
 class ChecklistViewController: UITableViewController {
 	
-	@IBAction func addItem(_ sender: UIBarButtonItem) {
-		print("added item")
-	}
 	var items: [ChecklistItem]
+	
+	@IBAction func addItem(_ sender: Any) {
+		let newRowIndex = items.count
+		let item = ChecklistItem()
+		//item.text = "I am a new row"
+		
+		var titles = ["Empty", "Full", "1/2 full", "1/2 empty", "Much todo about nothing"]
+		let randomNumber = arc4random_uniform(UInt32(titles.count))
+		let title = titles[Int(randomNumber)]
+		item.text = title
+		item.checked = true
+		
+		items.append(item)
+		
+		let indexPath = IndexPath(row: newRowIndex, section: 0)
+		let indexPaths = [indexPath]
+		tableView.insertRows(at: indexPaths, with: .automatic)
+	}
 	
 	required init?(coder aDecoder: NSCoder) {
 		
